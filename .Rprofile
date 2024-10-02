@@ -19,3 +19,7 @@
 }
 
 .First()
+
+if (interactive()) {
+  rstantools::rstan_config()
+}
