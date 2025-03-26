@@ -1,5 +1,6 @@
-load(testthat::test_path("testdata/testObjectDefault.RData"))
-load(testthat::test_path("testdata/testObjectGap.RData"))
+testObjectDefault1 <- readRDS(testthat::test_path("testdata", "default_object.rds"))
+testObjectGap1 <- readRDS(testthat::test_path("testdata", "gap_object1.rds"))
+testObjectGap11 <- readRDS(testthat::test_path("testdata", "gap_object11.rds"))
 
 testthat::test_that("plotTime",  {
   plot <- plotTime(object = testObjectDefault1, prop = 0.8, 

@@ -1,3 +1,8 @@
+# OsteoBioR 25.03.0
+
+## Updates
+- reduce package size by optimizing test data and including test-model files into the `.Rbuildignore`
+
 # OsteoBioR 25.02.0
 
 ## New Features

@@ -1,5 +1,6 @@
-load(testthat::test_path("testdata/testObjectDefault.RData"))
-load(testthat::test_path("testdata/testObjectGap.RData"))
+testObjectDefault1 <- readRDS(testthat::test_path("testdata", "default_object.rds"))
+testObjectGap1 <- readRDS(testthat::test_path("testdata", "gap_object1.rds"))
+testObjectGap11 <- readRDS(testthat::test_path("testdata", "gap_object11.rds"))
 
 testthat::test_that("getPlotData: two date inputs",  {
   plotData1 <- getPlotData(testObjectDefault1, prop = 0.8, time = NULL, deriv = "1")
@@ -38,37 +39,25 @@ testthat::test_that("getPlotData: two date inputs",  {
 
 
 testthat::test_that("getPlotData: one date input",  {
-  plotData1 <- getPlotData(testObjectDefault2, prop = 0.8, time = NULL, deriv = "1")
-  plotData2 <- getPlotData(testObjectDefault2, prop = 0.8, time = NULL, deriv = "2")
+  plotData1 <- getPlotData(testObjectDefault1, prop = 0.8, time = NULL, deriv = "1")
+  plotData2 <- getPlotData(testObjectDefault1, prop = 0.8, time = NULL, deriv = "2")
   
-  plotData1Target <- data.frame(
-    lower = c(-9.89907656206635,-11.2624404529165,
-              -11.4539884165524,-11.742349885122,-12.0660965464668,
-              -12.2113444038383),
-    median = c(-8.16935551885413,-9.44021686214228,
-               -9.42891260344628,-9.08031754669828,-8.91294666761698,
-               -8.86533944497804),
-    upper = c(-6.4244288140299,-7.81582599339432,
-              -7.38509654640456,-6.30377374939198,-5.64332388194448,
-              -5.54158337328692),
-    sd = c(1.34885080466708, 1.35703875903698, 
-           1.5895692220176, 2.20307418350219, 2.52256867044183, 2.66143079125866
-    ),
-    time = c(1L, 2L, 3L, 4L, 5L, 6L)
-  )
+  plotData1Target <- structure(list(
+    lower = c(-9.81693325790957, -11.3222408192011, -11.4659266620266, -11.7865029656666, -12.0578255855421, -12.0719659127685),
+    median = c(-8.16151403004918, -9.44719310014277, -9.37574433289511, -8.89758878855175, -8.77496693690095, -8.69272393530268),
+    upper = c(-6.42936455233924, -7.75138719574058, -7.33261350484481, -6.06113063226461, -5.50042606430566, -5.27929770330058),
+    sd = c(1.33713829843568, 1.38779685928719, 1.61491770752276, 2.2435686892909, 2.59687117559807, 2.70290343638949),
+    time = 1:6
+  ),
+  row.names = c(NA, -6L), class = "data.frame")
   
-  plotData2Target <- data.frame(
-    lower = c(-3.48242212158476,-1.83578723354548,
-              -1.75177415109341,-2.10696519877873,-2.29947596900347),
-    median = c(-1.1701378721665,-0.00215025735315155,
-               0.372613606234133,0.142404333952154,0.0421910046768903),
-    upper = c(0.584632457040193,2.11626139721327,
-              2.58128427989846,2.40079211685847,2.29467532444726),
-    sd = c(1.63417082215553, 
-           1.58450922848466, 1.79798685302716, 1.81358388856865, 1.89855532316841
-    ),
-    time = c(1L, 2L, 3L, 4L, 5L)
-  )
+  plotData2Target <- structure(list(
+    lower = c(-3.5070468715384, -1.88975603193923, -1.69800335864272, -1.99359111187714, -2.17984057504426),
+    median = c(-1.20999187104465, 0.0488322980614955, 0.419012970657708, 0.166373227374931, 0.0766007232233719),
+    upper = c(0.541802095090819, 2.13142150909996, 2.73026801430583, 2.30758491892875, 2.34360361651566),
+    sd = c(1.64719396911037, 1.62120832948596, 1.83064197559426, 1.81419080780957, 1.88032877584619),
+    time = 1:5
+  ), row.names = c(NA, -5L), class = "data.frame")
   
   testthat::expect_equal(plotData1, plotData1Target)
   testthat::expect_equal(plotData2, plotData2Target)
