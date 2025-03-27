@@ -2,19 +2,25 @@
 
 R Package to estimate isotopic values in the past and their change over time. 
 
-### Access to online version:
+### Access to online version
+
 - MAIN version: https://isomemoapp.com/app/osteo-bio-r
 - BETA version: https://isomemoapp.com/app/osteo-bio-r-beta
 
 ### Documenation
+
 - https://pandora-isomemo.github.io/OsteoBioR/
+
 ### Installation instructions
+
 - https://pandora-isomemo.github.io/docs/apps.html#osteobior
 
-### Release notes:
+### Release notes
+
 - see `NEWS.md`
 
 ### Folder for online models
+
 - [`inst/app/predefinedModels`](https://github.com/Pandora-IsoMemo/osteo-bior/tree/main/inst/app/predefinedModels)
 
 ## Stan development
