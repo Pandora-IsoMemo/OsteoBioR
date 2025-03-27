@@ -2,6 +2,7 @@
 
 ## Updates
 - reduce package size by optimizing test data and including test-model files into the `.Rbuildignore`
+- skip large data tests in CI and add large test data to the `.Rbuildignore`
 
 # OsteoBioR 25.02.0
 

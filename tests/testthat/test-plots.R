@@ -1,8 +1,8 @@
-testObjectDefault1 <- readRDS(testthat::test_path("testdata", "default_object.rds"))
-testObjectGap1 <- readRDS(testthat::test_path("testdata", "gap_object1.rds"))
-testObjectGap11 <- readRDS(testthat::test_path("testdata", "gap_object11.rds"))
-
 testthat::test_that("getPlotData: two date inputs",  {
+  data_path <- testthat::test_path("testdata_large", "default_object.rds")
+  skip_if_not(file.exists(data_path), "Skipping large data test on CI or for devtools:check()")
+  
+  testObjectDefault1 <- readRDS(data_path)
   plotData1 <- getPlotData(testObjectDefault1, prop = 0.8, time = NULL, deriv = "1")
   plotData2 <- getPlotData(testObjectDefault1, prop = 0.8, time = NULL, deriv = "2")
   
@@ -39,6 +39,10 @@ testthat::test_that("getPlotData: two date inputs",  {
 
 
 testthat::test_that("getPlotData: one date input",  {
+  data_path <- testthat::test_path("testdata_large", "default_object.rds")
+  skip_if_not(file.exists(data_path), "Skipping large data test on CI or for devtools:check()")
+  
+  testObjectDefault1 <- readRDS(data_path)
   plotData1 <- getPlotData(testObjectDefault1, prop = 0.8, time = NULL, deriv = "1")
   plotData2 <- getPlotData(testObjectDefault1, prop = 0.8, time = NULL, deriv = "2")
   
@@ -85,6 +89,12 @@ testthat::test_that("adjustTimeColumn: deriv = 2",  {
 
 
 testthat::test_that("getXAxisData", {
+  data_path <- testthat::test_path("testdata_large", "gap_object1.rds")
+  skip_if_not(file.exists(data_path), "Skipping large data test on CI or for devtools:check()")
+  
+  testObjectGap1 <- readRDS(data_path)
+  testObjectGap11 <- readRDS(testthat::test_path("testdata_large", "gap_object11.rds"))
+  
   xAxisData1 <- getXAxisData(object = testObjectGap1, oldXAxisData = data.frame())
   xAxisData2 <- getXAxisData(object = testObjectGap11, oldXAxisData = xAxisData1)
   
@@ -177,6 +187,10 @@ testthat::test_that("getBreaks, deriv = 2",  {
 })
 
 testthat::test_that("extendXAxis", {
+  data_path <- testthat::test_path("testdata_large", "default_object.rds")
+  skip_if_not(file.exists(data_path), "Skipping large data test on CI or for devtools:check()")
+  
+  testObjectDefault1 <- readRDS(data_path)
   oldXAxisData <- structure(list(
     time = c(0.5, 1.5, 2.5, 3.5, 4.5, 5.5), 
     time_lower = c(0, 1, 2, 3, 4, 5), 

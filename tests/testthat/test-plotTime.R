@@ -1,8 +1,10 @@
-testObjectDefault1 <- readRDS(testthat::test_path("testdata", "default_object.rds"))
-testObjectGap1 <- readRDS(testthat::test_path("testdata", "gap_object1.rds"))
-testObjectGap11 <- readRDS(testthat::test_path("testdata", "gap_object11.rds"))
-
 testthat::test_that("plotTime",  {
+  data_path <- testthat::test_path("testdata_large", "default_object.rds")
+  skip_if_not(file.exists(data_path), "Skipping large data test on CI or for devtools:check()")
+  
+  testObjectDefault1 <- readRDS(data_path)
+  testObjectGap1 <- readRDS(testthat::test_path("testdata_large", "gap_object1.rds"))
+  
   plot <- plotTime(object = testObjectDefault1, prop = 0.8, 
                     plotShifts = FALSE,
                     deriv = "1", 
@@ -61,6 +63,10 @@ testthat::test_that("plotTime",  {
 })
 
 testthat::test_that("basePlotTime",  {
+  data_path <- testthat::test_path("testdata_large", "default_object.rds")
+  skip_if_not(file.exists(data_path), "Skipping large data test on CI or for devtools:check()")
+  
+  testObjectDefault1 <- readRDS(data_path)
   plotData <- getPlotData(object = testObjectDefault1, prop = 0.8, deriv = "1") %>%
     updateTime(object = testObjectDefault1, deriv = "1")
   plotDataDF <- list(ind_1 = plotData) %>%
@@ -144,6 +150,12 @@ testthat::test_that("basePlotTime",  {
 })
 
 testthat::test_that("drawLinesAndRibbon",  {
+  data_path <- testthat::test_path("testdata_large", "default_object.rds")
+  skip_if_not(file.exists(data_path), "Skipping large data test on CI or for devtools:check()")
+  
+  testObjectDefault1 <- readRDS(data_path)
+  testObjectGap1 <- readRDS(testthat::test_path("testdata_large", "gap_object1.rds"))
+
   # second derivation
   plotData1 <- getPlotData(object = testObjectDefault1, prop = 0.8, deriv = "2") %>%
     updateTime(object = testObjectDefault1, deriv = "2")
