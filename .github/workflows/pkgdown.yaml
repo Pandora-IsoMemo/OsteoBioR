@@ -48,7 +48,7 @@ jobs:
           Rscript -e "rstantools::rstan_config()"
 
       - name: Build site
-        run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
+        run: pkgdown::build_site_github_pages(new_process = FALSE, install = TRUE)
         shell: Rscript {0}
 
       # Save the generated site to be shared with the next job
