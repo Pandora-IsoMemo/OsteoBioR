@@ -43,14 +43,14 @@ jobs:
             Pandora = https://Pandora-IsoMemo.github.io/drat/
 
       # Add the dated PPM snapshot only on Linux.
-      - name: Configure Linux PPM snapshot
-        if: runner.os == 'Linux'
-        shell: bash
-        run: |
-          echo 'options(repos = c(
-            PPM = "https://packagemanager.posit.co/cran/__linux__/noble/2025-03-01",
-            getOption("repos")
-          ))' >> ~/.Rprofile
+      # - name: Configure Linux PPM snapshot
+      #   if: runner.os == 'Linux'
+      #   shell: bash
+      #   run: |
+      #     echo 'options(repos = c(
+      #       PPM = "https://packagemanager.posit.co/cran/__linux__/noble/2025-03-01",
+      #       getOption("repos")
+      #     ))' >> ~/.Rprofile
 
       - name: Show R version
         run: |
