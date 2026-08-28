@@ -1,6 +1,14 @@
 # OsteoBioR 25.03.0
 
 ## Updates
+- Updated image
+- Adapted dependencies
+- Increased the required DataTools version to the most recent version.
+- Expanded and organized .Rbuildignore, .gitignore, and .dockerignore entries to reduce accidental inclusion of local/CI/build artifacts.
+
+# OsteoBioR 25.03.0
+
+## Updates
 - reduce package size by optimizing test data and including test-model files into the `.Rbuildignore`
 - skip large data tests in CI and add large test data to the `.Rbuildignore`
 
