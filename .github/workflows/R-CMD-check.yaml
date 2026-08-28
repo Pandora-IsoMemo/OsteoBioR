@@ -20,10 +20,12 @@ jobs:
         config:
           - {os: macos-latest,   r: 'release'}
           - {os: windows-latest, r: 'release'}
-          - {os: ubuntu-latest, r: 'devel', http-user-agent: 'release'}
-          - {os: ubuntu-latest, r: 'release'}
-          - {os: ubuntu-latest, r: 'oldrel-1'}
-          - {os: ubuntu-latest, r: 'oldrel-2'}
+          - {os: ubuntu-latest,  r: 'devel', http-user-agent: 'release'}
+          - {os: ubuntu-latest,  r: 'release'}
+          - {os: ubuntu-latest,  r: 'oldrel-1'}
+          - {os: ubuntu-latest,  r: 'oldrel-2'}
+          - {os: ubuntu-latest,  r: 'oldrel-3'}
+          - {os: ubuntu-latest,  r: 'oldrel-4'}
 
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -41,16 +43,6 @@ jobs:
           use-public-rspm: true
           extra-repositories: |
             Pandora = https://Pandora-IsoMemo.github.io/drat/
-
-      # Add the dated PPM snapshot only on Linux.
-      # - name: Configure Linux PPM snapshot
-      #   if: runner.os == 'Linux'
-      #   shell: bash
-      #   run: |
-      #     echo 'options(repos = c(
-      #       PPM = "https://packagemanager.posit.co/cran/__linux__/noble/2025-03-01",
-      #       getOption("repos")
-      #     ))' >> ~/.Rprofile
 
       - name: Show R version
         run: |
