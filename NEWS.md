@@ -1,4 +1,4 @@
-# OsteoBioR 25.03.0
+# OsteoBioR 26.08.0
 
 ## Updates
 - Updated image
