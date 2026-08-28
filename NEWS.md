@@ -1,3 +1,8 @@
+# OsteoBioR 26.08.1
+
+## Bug Fixes
+- Fixed Dockerfile structure
+
 # OsteoBioR 26.08.0
 
 ## Updates

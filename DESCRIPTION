@@ -1,5 +1,5 @@
 Package: OsteoBioR
-Version: 26.08.0
+Version: 26.08.1
 Date: 2026-08-28
 Title: Temporal Estimation of Isotopic Values
 Description: Estimates the temporal changes of isotopic values of bone and teeth data solely based on the renewal rate of different bones/teeth and given measurements. The package furthermore provides plotting and exporting functionalities.
