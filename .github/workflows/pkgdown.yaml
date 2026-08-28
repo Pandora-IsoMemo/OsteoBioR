@@ -36,17 +36,16 @@ jobs:
             Pandora = https://Pandora-IsoMemo.github.io/drat/
 #            PPM = https://packagemanager.posit.co/cran/__linux__/jammy/2025-03-01
 
-      - name: Compile rstan files via rstantools
-        run: |
-          # R is already installed in the base-image
-          Rscript -e "rstantools::rstan_config()"
-
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: any::pkgdown, local::.
           needs: website
           cache: true
           cache-version: 2
+
+      - name: Compile rstan files via rstantools
+        run: |
+          Rscript -e "rstantools::rstan_config()"
 
       - name: Build site
         run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
