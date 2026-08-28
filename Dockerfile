@@ -1,4 +1,4 @@
-FROM inwt/r-shiny:4.3.2
+FROM inwt/r-shiny:4.4.3
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -9,6 +9,9 @@ RUN echo "options(repos = c(getOption('repos'), PANDORA = 'https://Pandora-IsoMe
 RUN installPackage \
     rstan \
     rstantools
+    
+RUN Rscript -e "remotes::install_github('r-lib/httr2@v1.2.3')" \
+    && Rscript -e "remotes::install_github('tidyverse/ellmer@v0.4.1')"
 
 ADD . .
 
