@@ -137,7 +137,7 @@ timePlotFormattingUI <- function(id) {
       ),
       tabPanel(
         # Break Point Detection ----
-        "Break point detection",
+        "Break point detection (with Plot Data)",
         value = "breakPointTab",
         changePointsUI(ns("changePoints"))
       )

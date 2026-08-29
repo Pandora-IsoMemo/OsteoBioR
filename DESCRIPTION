@@ -1,5 +1,6 @@
 Package: OsteoBioR
-Version: 25.03.0
+Version: 26.08.1
+Date: 2026-08-28
 Title: Temporal Estimation of Isotopic Values
 Description: Estimates the temporal changes of isotopic values of bone and teeth data solely based on the renewal rate of different bones/teeth and given measurements. The package furthermore provides plotting and exporting functionalities.
 Authors@R: c(
@@ -11,12 +12,12 @@ License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 ByteCompile: true
-Depends: R (>= 3.5.0), Rcpp (>= 0.12.0)
+Depends: R (>= 4.2.0), Rcpp (>= 0.12.0)
 Imports:
-  ChangeR (>= 24.11.0.4),
+  ChangeR (>= 26.08.0),
   dplyr,
   ggplot2 (>= 2.2.1),
-  DataTools (>= 24.10.0.2),
+  DataTools (>= 26.08.2),
   futile.logger,
   methods,
   modules,
@@ -30,7 +31,7 @@ Imports:
   shinyMatrix,
   shinyWidgets,
   shinythemes,
-  shinyTools (>= 25.02.0.2),
+  shinyTools (>= 26.05.0),
   yaml
 LinkingTo: StanHeaders (>= 2.18.0), rstan (>= 2.18.1), BH (>= 1.66.0), Rcpp (>= 0.12.0), RcppEigen (>= 0.3.3.3.0)
 Suggests: 
@@ -39,6 +40,6 @@ Suggests:
     testthat (>= 3.0.0)
 SystemRequirements: GNU make
 NeedsCompilation: yes
-RoxygenNote: 7.3.1
 Config/testthat/edition: 3
 URL: https://pandora-isomemo.github.io/OsteoBioR/
+Config/roxygen2/version: 8.0.0
