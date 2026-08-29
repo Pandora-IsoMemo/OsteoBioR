@@ -2,7 +2,6 @@
 #'
 #' @description A DESCRIPTION OF THE PACKAGE
 #'
-#' @docType package
 #' @name OsteoBioR-package
 #' @aliases OsteoBioR
 #' @useDynLib OsteoBioR, .registration = TRUE
